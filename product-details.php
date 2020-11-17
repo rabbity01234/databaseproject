@@ -90,13 +90,31 @@ include('1.php')
 							<li><a class="active" href="#"><span>Category</span> : <?php echo $number['productLine'] ?></a></li>
 							<li><a href="#"><span>Quantity</span> : <?php echo $number['quantityInStock']?></a></li>
 						</ul>
+                     
 						<p><?php echo $number['productDescription']  ?> </p>
 						<div class="product_count">
-              <label for="qty">Quantity:</label>
+              <label for="qty">Quantity: </label>
+                      
+                      
+                <form action="processcart.php" method="post">
+                  
+                  <input type="text" name='productCode' value="<?php echo $_GET['productCode'] ?>" style='display: none;'>
+                  
+                  <input type="text" name="amount" value="1" required="true"><br>
+                  <input type="text" name="CID" placeholder="CID" required="true"><br>
+                  <input type="submit" value="Addcart"> 
+
+                  
+                  </form>  
+
+
+							<!-- <input  id="amount" type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">	 -->
+       
               
-							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-							
-							<button type="submit" class="btn"  >kuyyy</button> 
+							<!-- <a class="button primary-btn" href="#" id='addToCart' onclick="addcart()" >Add to Cart</a>   -->
+              
+              
+                      
 						</div>
 						
 					</div>
